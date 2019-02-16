@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<title>{% block title %}Django Web Programming{% endblock %}</title>
+
+{% load staticfiles %}              <!--- 템플릿 태그를 사용하기 위해서 저 문장으로 커스텀태그 파일을 로딩해야함--->
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "css/base.css" %}{% endblock %}" />
+<link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
+
+</head>
+
+<body>
+
+<div id="header"><!--- 사이트의 제목과 로그인 관련기능이 있고 shkim 에는 로그인 아이디가 채워짐 --->
+    <h2 class="maintitle">Make Myblog</h2>
+    <h4 class="welcome">환영합니다!!!!<a href="#">Login Id</a> /
+                <a href="#">Change Password</a> /
+                <a href="#">Logout</a>
+    </h4>
+</div>
+
+<div id="menu">  <!--- menu영역에는 사이트의 메뉴가 위치 --->
+    <li><a href="{% url 'home' %}">메인으로</a></li>
+    <li><a href="{% url 'bookmark:index' %}">북마크</a></li>
+    <li><a href="{% url 'blog:index' %}">나의 블로그</a></li>
+
+    <li><a href="#">추가적으로...&bigtriangledown;</a>
+        <ul>
+            <li><a href="#">북마크</a></li>
+            <li><a href="#">나의 블로그</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Change&bigtriangledown;</a>
+        <ul>
+            <li><a href="#">북마크</a></li>
+            <li><a href="#">나의 블로그</a></li>
+        </ul>
+    </li>
+
+    <li><a href="{% url 'blog:post_archive' %}">Archive</a></li>
+    <li><a href="#">검색</a></li>
+    <li><a href="{% url 'admin:index' %}">Admin</a></li>
+</div>
+
+{% block content %}{% endblock %} <!--- content영역은 빈칸으로 하고 각앱에서 만드는 페이지로 채워질 예정 이영역은 block태그를 사용함으로써 실제내용은 전적으로 하위탬플릿파일이 결정되도록함.--->
+
+{% block footer %}{% endblock %}
+
+</body>
+</html>
