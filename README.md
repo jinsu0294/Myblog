@@ -1,1 +1,2 @@
-﻿# 장고를 활용한 블로그 북마크  웹개발.###MVT 패턴을 활용한 django 프레임워크 사용##기능구현1.Blog- Blog Post form 구현- Post Archive 생성- Blog Tags 구현- 댓글달기 기능 (Disqus사용)2.Bookmark - bookmark list- bookmark form 구현- bookmark 링크연결3.Photo (구현중)- 사진올리기-  사진 좋아요 누르기.- 게시물 리스트 보여주기 게시물 삭제하기 4.Homepage- 각 App 연결- login/logout 기능(추후생성)- 검색기능 (추후생성)- 인증된 회원만 게시물 올리기,댓글달기기능(추후)"# Myblog" 
+"# Myblog" 
+------
